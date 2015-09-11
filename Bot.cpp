@@ -3,6 +3,8 @@
 
 int bot::move(map &map, player &playerbot, int k, int len, int wid)
 {
+    if (playerbot.playerStamina <=0 || playerbot.playerMoney <=0)
+        return 0;
 //        static int m = 0;
 //        static int s = 0;
 //        static int z = 0;

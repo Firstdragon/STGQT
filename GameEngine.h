@@ -34,6 +34,6 @@ public:
     void startGame(int n, Visual *scene, Visual *scene2);
 
     // Process igry
-    void playGame(int n, Visual *scene, Visual *scene2);
+    void playGame(Visual *scene, Visual *scene2, int caughtKey);
 
 };

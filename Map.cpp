@@ -9,7 +9,7 @@ map::map()
 
         len = 50;
         wid = 50;
-        hei = 2;
+        hei = 5;
 
         int ii, jj, s = 0;
 
@@ -352,11 +352,11 @@ bool map::isbonus(cell b)
 
 map::~map()					//Ochistka vydelenoj pamyati
 {
-      //  for (int i = 0; i < len; i++)
-      // {
-      //         for (int j = 0; j < wid; j++)
-      //                  delete[] floor[i][j];
-      //          delete floor[i];
-      //  }
-      //  delete[] floor;
+        for (int i = 0; i < len; i++)
+       {
+               for (int j = 0; j < wid; j++)
+                        delete[] floor[i][j];
+                delete floor[i];
+        }
+        delete[] floor;
 }

@@ -9,7 +9,6 @@ public:
     void makeWalls(map &mapp, int k);
     void paintplayer(map &mapp, int k);
 protected:
-    virtual void mousePressEvent(QGraphicsSceneMouseEvent * mouseEvent);
 private:
     QGraphicsPixmapItem * worker;
     QGraphicsItem * itemCollidesWith(QGraphicsItem * item);

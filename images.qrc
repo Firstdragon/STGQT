@@ -3,7 +3,12 @@
         <file>images/wall.png</file>
         <file>images/player1.png</file>
         <file>images/player2.png</file>
+        <file>images/Money100.png</file>
+        <file>images/Money500.png</file>
+        <file>images/Liftdown.png</file>
+        <file>images/Liftup.png</file>
         <file>images/player11.png</file>
         <file>images/player22.png</file>
+        <file>images/player33.png</file>
     </qresource>
 </RCC>

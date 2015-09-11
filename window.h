@@ -23,10 +23,11 @@ public:
     ~Window();
 protected:
 
-//    virtual void keyPressEvent(QKeyEvent * keyEvent);
+    virtual void keyPressEvent(QKeyEvent * keyEvent);
 
 public slots:
     void updater();
+    void updater2();
 
 private slots:
 
@@ -39,14 +40,14 @@ private slots:
     void on_ComputerVSComputer_clicked();
 
 private:
-
     Visual * scene;
 
     Visual *scene2;
 
     Ui::Window *ui;
 
-    int movedirection;
+    int movedirection=0;
+    int movedirection2=0;
 
     gameEngine game;
     QTimer *timer;

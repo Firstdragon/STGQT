@@ -8,50 +8,17 @@
 
 Visual::Visual(QObject *parent) : QGraphicsScene(parent)
 {
-
-
-  //  worker = addPixmap(QPixmap("Worker.gif"));
-    //worker->translate(25.5, 25.5);
-  //  worker->setData(0, "Worker");
-  //  setBackgroundBrush(QBrush(QColor(255,255,255), QPixmap("bg.jpg")));
-}
-
-void Visual::mousePressEvent(QGraphicsSceneMouseEvent * mouseEvent)
-{
-  //  if (mouseEvent->button() == Qt::LeftButton)
-  //      placeBox(mouseEvent->scenePos().x(), mouseEvent->scenePos().y());
-  //  if (mouseEvent->button() == Qt::RightButton) {
-        //QGraphicsItem * item = itemAt(mouseEvent->scenePos());
-        //if (item)
-       //     if (item->data(0) == "Box")
-      //          removeItem(item);
-//    }
-
 }
 
 
-
-
-//void Visual::movebot()
-//{
-//    QBrush Player(QColor(255, 255, 255), QPixmap(":resource/images/player1.png"));
-  //  QPen pen(Qt::NoPen);
-    //for (int i=0;i<mapp.len;i++)
-  //  {
-   //     QGraphicsItem * item =
-     //   addRect(QRectF(i*10, j*10, 10, 10), pen, Player);
-       // item->setData(0, "Wall");
-       // sleep(20);
-
-    //}
-//}
 
 void Visual::makeWalls(map &mapp,int k)
 {
+    QGraphicsScene::clear();
     QBrush wall(QColor(255, 255, 255), QPixmap(":resource/images/wall.png"));
     QPen pen(Qt::NoPen);
-    QBrush liftup  (QColor(255, 255, 255), QPixmap(":resource/images/player22.png"));
-    QBrush liftdown(QColor(255, 255, 255), QPixmap(":resource/images/player2.png"));
+    QBrush liftup  (QColor(255, 255, 255), QPixmap(":resource/images/Liftup.png"));
+    QBrush liftdown(QColor(255, 255, 255), QPixmap(":resource/images/Liftdown.png"));
     for (int i = 0; i < mapp.len; i++)
         {
             for (int j = 0; j < mapp.wid; j++)
@@ -80,13 +47,13 @@ void Visual::makeWalls(map &mapp,int k)
 void Visual::paintplayer(map &mapp,int k)
 {
     QPen pen(Qt::NoPen);
-    QBrush bonus100(QColor(255, 255, 255), QPixmap(":resource/images/player1.png"));
-    QBrush bonus200(QColor(255, 255, 255), QPixmap(":resource/images/player1.png"));
-    QBrush bonus300(QColor(255, 255, 255), QPixmap(":resource/images/palyer1.png"));
-    QBrush money100(QColor(255, 255, 255), QPixmap(":resource/images/player1.png"));
-    QBrush money500(QColor(255, 255, 255), QPixmap(":resource/images/player1.png"));
-    QBrush player1 (QColor(255, 255, 255), QPixmap(":resource/images/player11.png"));
-    QBrush player2 (QColor(255, 255, 255), QPixmap(":resource/images/player11.png"));
+    QBrush bonus100(QColor(255, 255, 255), QPixmap(":resource/images/player11.png"));
+    QBrush bonus200(QColor(255, 255, 255), QPixmap(":resource/images/player22.png"));
+    QBrush bonus300(QColor(255, 255, 255), QPixmap(":resource/images/palyer33.png"));
+    QBrush money100(QColor(255, 255, 255), QPixmap(":resource/images/Money100.png"));
+    QBrush money500(QColor(255, 255, 255), QPixmap(":resource/images/Money500.png"));
+    QBrush player1 (QColor(255, 255, 255), QPixmap(":resource/images/player1.png"));
+    QBrush player2 (QColor(255, 255, 255), QPixmap(":resource/images/player2.png"));
 
         for (int i = 0; i < mapp.len; i++)
         {
@@ -95,7 +62,6 @@ void Visual::paintplayer(map &mapp,int k)
                 //QGraphicsItem * item = QGraphicsScene.items(i*10,j*10,10,10);
                 QList <QGraphicsItem*>item;
                   item=items(QRectF(i*10, j*10, 10, 10));
-                 //if (item.size()>0 && item[0]->data(0) != mapp.floor[i][j][k])
                 if (item.size()>0 && item[0]->data(0) != map::WALL && item[0]->data(0) != map::LIFT_UP && item[0]->data(0) != map::LIFT_DOWN)
                  removeItem(item[0]);
                 if (mapp.floor[i][j][k] == map::BONUS100)

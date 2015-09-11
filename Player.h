@@ -23,7 +23,7 @@ public:
         player();
 
         // Dvizhenie igroka
-        int playerMoving(int caughtKey, map &map, map::cell r);
+        int playerMoving(int caughtKey, map &map, map::cell r, bool &needWalls);
 
         ~player();
 
